@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificador Gatos vs Cães</title>
+</head>
+<body>
+    <h2>Classificador de Imagens (Gatos 🐱 vs Cães 🐶)</h2>
+
+    <!-- Formulário para upload -->
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" capture="camera">
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if image %}
+        <h3>Imagem Enviada:</h3>
+        <img src="{{ image }}" alt="Imagem" width="300">
+    {% endif %}
+
+    {% if prediction %}
+        <h3>Resultado: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
